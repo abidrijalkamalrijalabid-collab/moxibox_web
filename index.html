@@ -1,463 +1,1187 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8">
-    <!-- Meta viewport agar ukuran pas dan tidak perlu pinch-to-zoom -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Mokibox - Syarat dan Ketentuan Layanan</title>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            -webkit-text-size-adjust: 100%;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mukibox — Panduan & Aturan Komunitas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* --- STICKERIO INSPIRED DESIGN SYSTEM --- */
+:root {
+  --bg-dark-green: red;
+  --bg-dark-green-hover: white;
+  --bg-cream: linear-gradient(135deg, #ff1e56 0%, #3b1d6e 48%, #0a1445 100%);
+  --bg-card-light: #eaebd8;
+  --bg-card-dark: gold;
+  --text-dark: #1b241e;
+  --text-muted: #535d56;
+  --accent-yellow: #fcd462;
+  --accent-mint: #a2caa6;
+  --border-subtle: #dcdbc8;
+  --radius-custom: 24px;
+}
 
-        body {
-            background-color: #f8f9fa;
-            color: #161823;
-            line-height: 1.5;
-            font-size: 15px;
-        }
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-        /* Navbar Styling Mobile Optimized */
-        header {
-            background-color: #ffffff;
-            border-bottom: 1px solid #fe2c5520;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
+html {
+  scroll-behavior: smooth;
+}
 
-        .navbar {
-            max-width: 100%;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 12px 16px;
-        }
+body {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background: var(--bg-cream);
+  background-attachment: fixed;
+  color: var(--text-dark);
+  font-size: 15px;
+  line-height: 1.6;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
 
-        .logo-area {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: bold;
-            color: #fe2c55;
-            font-size: 1.15rem;
-            cursor: pointer;
-        }
+/* --- HEADER --- */
+header {
+  background: rgba(244, 243, 232, 0.88);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  padding: 18px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid #e2e1d0;
+}
 
-        /* Sembunyikan menu navigasi desktop yang terlalu panjang di HP, gunakan tombol ringkas jika perlu */
-        .nav-links {
-            display: none;
-        }
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 800;
+  font-size: 22px;
+  letter-spacing: -0.6px;
+  color: var(--text-dark);
+  text-decoration: none;
+}
 
-        /* Tombol Menu Dropdown sederhana khusus mobile */
-        .mobile-menu-btn {
-            background: none;
-            border: none;
-            font-size: 1.25rem;
-            cursor: pointer;
-            color: #161823;
-        }
+.logo-icon {
+  width: 32px;
+  height: 32px;
+  background: blueviolet;
+  border-radius: 10px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  box-shadow: 0 2px 6px rgba(20, 61, 44, 0.18);
+}
 
-        /* Dropdown Menu Mobile */
-        .mobile-dropdown {
-            display: none;
-            background: #ffffff;
-            border-bottom: 1px solid #eee;
-            padding: 10px 16px;
-        }
+header nav {
+  display: flex;
+  align-items: center;
+  gap: 26px;
+}
 
-        .mobile-dropdown.show {
-            display: block;
-        }
+header nav a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
 
-        .mobile-dropdown a {
-            display: block;
-            padding: 8px 0;
-            color: #161823;
-            text-decoration: none;
-            font-size: 0.9rem;
-            border-bottom: 1px solid #f8f9fa;
-        }
+header nav a:hover {
+  opacity: 0.72;
+}
 
-        .mobile-dropdown a:hover, .mobile-dropdown a.active {
-            color: #fe2c55;
-            font-weight: 600;
-        }
+header nav a.active-link {
+  color: var(--bg-dark-blue);
+  font-weight: 800;
+}
 
-        /* Sub-header Date */
-        .date-banner {
-            text-align: center;
-            padding: 10px 16px;
-            background-color: #ffffff;
-            border-bottom: 1px solid #eee;
-            font-size: 0.8rem;
-            color: #666;
-        }
+header nav a.btn-nav {
+  background: #e1e2d1;
+  padding: 10px 20px;
+  border-radius: 99px;
+  margin-left: 4px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
 
-        .date-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: #f1f1f2;
-            padding: 4px 12px;
-            border-radius: 20px;
-            border: 1px solid #e3e3e4;
-        }
+header nav a.btn-nav:hover,
+header nav a.btn-nav.active-link {
+  background: var(--bg-dark-blue);
+  color: #fff;
+  opacity: 1;
+}
 
-        /* Main Container 1 Kolom Penuh untuk HP */
-        .main-container {
-            max-width: 100%;
-            margin: 15px auto;
-            padding: 0 16px;
-            display: block;
-        }
+/* --- ROUTING HALAMAN --- */
+.page {
+  display: none;
+  max-width: 1120px;
+  margin: auto;
+  padding: 24px 24px 80px 24px;
+}
 
-        /* Sidebar Daftar Isi diubah menjadi pilihan menu ringkas / disembunyikan agar fokus konten */
-        .sidebar {
-            background: #ffffff;
-            border: 1px solid #e3e3e4;
-            padding: 12px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-        }
+.page.active {
+  display: block;
+  animation: fadeIn 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
 
-        .sidebar h3 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            color: #8a8b91;
-            letter-spacing: 0.5px;
-            margin-bottom: 10px;
-        }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
 
-        .sidebar select {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ccc;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            background: #fff;
-            color: #161823;
-        }
+.back {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: var(--bg-dark-green);
+  text-decoration: none;
+  font-weight: 700;
+  margin-bottom: 24px;
+  padding: 8px 16px;
+  background: #eaebd8;
+  border-radius: 99px;
+  font-size: 13.5px;
+  transition: background 0.2s;
+}
 
-        /* Content Area */
-        .content {
-            background: transparent;
-        }
+.back:hover {
+  background: #dfe1cb;
+}
 
-        .alert-box {
-            background-color: #fe2c550d;
-            border: 1px solid #fe2c5530;
-            color: #161823;
-            padding: 14px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            font-size: 0.9rem;
-        }
+/* --- HERO SECTION --- */
+.hero-container {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 48px;
+  align-items: center;
+  padding: 48px 0 64px 0;
+  position: relative;
+}
 
-        .section-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin-bottom: 15px;
-        }
+.hero-tagline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: #eaebd8;
+  color: #244f3c;
+  font-weight: 700;
+  font-size: 12px;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  padding: 7px 14px;
+  border-radius: 99px;
+}
 
-        .section-number {
-            background-color: #fe2c55;
-            color: white;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border-radius: 6px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            flex-shrink: 0;
-        }
+.hero-text h1 {
+  font-size: 56px;
+  font-weight: 800;
+  line-height: 1.07;
+  letter-spacing: -2.2px;
+  margin: 20px 0;
+  color: var(--text-dark);
+}
 
-        .section-title h2 {
-            font-size: 1.1rem;
-            color: #161823;
-        }
+.hero-text h1 span.highlight {
+  color: #245c44;
+  position: relative;
+  display: inline-block;
+}
 
-        .content p {
-            margin-bottom: 14px;
-            color: #565865;
-            font-size: 0.9rem;
-            line-height: 1.6;
-            word-wrap: break-word;
-        }
+.hero-text p {
+  color: var(--text-muted);
+  font-size: 17.5px;
+  margin-bottom: 34px;
+  max-width: 490px;
+  line-height: 1.65;
+}
 
-        .content strong {
-            color: #161823;
-        }
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 18px;
+  align-items: center;
+}
 
-        .tab-content {
-            display: none;
-        }
+.btn-dark {
+  background: var(--text-dark);
+  color: #fff;
+  text-decoration: none;
+  padding: 15px 30px;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: 0 8px 20px rgba(27, 36, 30, 0.14);
+}
 
-        .tab-content.active {
-            display: block;
-        }
-    </style>
+.btn-dark:hover {
+  background: var(--bg-dark-green);
+  transform: translateY(-2px);
+}
+
+.btn-link {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
+  padding: 12px 16px;
+  border-radius: 99px;
+  transition: background 0.2s ease;
+}
+
+.btn-link:hover {
+  background: #eaebd8;
+}
+
+/* --- HERO PHONE MOCKUP & STICKERS --- */
+.hero-graphic {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mockup-phone {
+  background: #101318;
+  width: 296px;
+  height: 550px;
+  border-radius: 44px;
+  border: 11px solid #1e222b;
+  box-shadow: 0 32px 64px rgba(20, 61, 44, 0.18);
+  padding: 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.phone-notch {
+  width: 90px;
+  height: 22px;
+  background: #101318;
+  border-radius: 99px;
+  margin: 0 auto 10px auto;
+}
+
+.phone-screen {
+  background: #171b24;
+  width: 100%;
+  height: calc(100% - 32px);
+  border-radius: 30px;
+  padding: 16px 14px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.chat-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #32624d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.chat-user-info {
+  text-align: left;
+}
+
+.chat-user-name {
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.chat-user-status {
+  color: var(--accent-mint);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.chat-messages {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 10px 0;
+  overflow-y: auto;
+}
+
+.bubble {
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 12.5px;
+  line-height: 1.45;
+  max-width: 86%;
+  animation: popIn 0.25s ease;
+}
+
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.9); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.bubble.them {
+  background: #252b38;
+  color: #eef1f5;
+  align-self: flex-start;
+  border-bottom-left-radius: 6px;
+}
+
+.bubble.me {
+  background: #32624d;
+  color: #fff;
+  align-self: flex-end;
+  border-bottom-right-radius: 6px;
+}
+
+.bubble.sticker-msg {
+  background: transparent;
+  padding: 2px;
+  font-size: 46px;
+  line-height: 1.1;
+  align-self: flex-end;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.35));
+}
+
+.chat-tray {
+  background: #202633;
+  border-radius: 20px;
+  padding: 8px 10px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.tray-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 4px 6px;
+  border-radius: 12px;
+  transition: transform 0.15s ease, background 0.15s ease;
+}
+
+.tray-btn:hover {
+  transform: scale(1.22);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+/* Stiker Melayang Interaktif */
+.floating-sticker-yellow {
+  position: absolute;
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+  font-weight: 800;
+  font-size: 15px;
+  padding: 10px 18px;
+  border-radius: 18px;
+  border: 2.5px solid var(--text-dark);
+  top: 52px;
+  left: -20px;
+  transform: rotate(-11deg);
+  box-shadow: 4px 4px 0 var(--text-dark);
+  z-index: 4;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.floating-sticker-yellow:hover {
+  transform: rotate(-6deg) scale(1.08);
+}
+
+.floating-sticker-star {
+  position: absolute;
+  background: var(--accent-mint);
+  width: 62px;
+  height: 62px;
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  top: 72px;
+  right: -8px;
+  transform: rotate(15deg);
+  z-index: 3;
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.floating-sticker-cat {
+  position: absolute;
+  bottom: 24px;
+  right: -12px;
+  background: #fff;
+  border: 2.5px solid var(--text-dark);
+  box-shadow: 4px 4px 0 var(--text-dark);
+  border-radius: 22px;
+  padding: 8px 14px;
+  font-size: 36px;
+  line-height: 1;
+  transform: rotate(-8deg);
+  z-index: 4;
+  cursor: pointer;
+  user-select: none;
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.floating-sticker-cat:hover {
+  transform: rotate(0deg) scale(1.1);
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: rotate(15deg) translateY(0); }
+  50% { transform: rotate(22deg) translateY(-8px); }
+}
+
+/* --- BANNER HIJAU GELAP --- */
+.green-banner {
+  background: var(--bg-dark-green);
+  color: #fff;
+  border-radius: var(--radius-custom);
+  padding: 76px 40px;
+  text-align: center;
+  margin: 28px 0 72px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.green-banner::before {
+  content: "";
+  position: absolute;
+  width: 280px;
+  height: 280px;
+  background: radial-gradient(circle, rgba(162, 202, 166, 0.14) 0%, transparent 70%);
+  top: -80px;
+  left: -60px;
+  pointer-events: none;
+}
+
+.green-banner .tag {
+  color: var(--accent-mint);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.green-banner h2 {
+  font-size: 42px;
+  font-weight: 800;
+  margin: 16px auto 28px auto;
+  letter-spacing: -1.3px;
+  max-width: 720px;
+  line-height: 1.15;
+}
+
+.btn-white {
+  background: #fff;
+  color: var(--text-dark);
+  text-decoration: none;
+  padding: 15px 32px;
+  border-radius: 99px;
+  font-weight: 700;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn-white:hover {
+  background: var(--accent-yellow);
+  transform: translateY(-2px);
+}
+
+.green-banner .sub-info {
+  margin-top: 22px;
+  color: var(--accent-mint);
+  font-size: 13.5px;
+  font-weight: 500;
+}
+
+/* --- SEKSI 3 LANGKAH --- */
+.section-header-wrap {
+  margin-bottom: 36px;
+}
+
+.section-eyebrow {
+  color: #32624d;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.section-title {
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  line-height: 1.15;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 36px;
+  border-top: 1px solid var(--border-subtle);
+  padding-top: 32px;
+  margin-bottom: 80px;
+}
+
+.step-item .num {
+  font-size: 14px;
+  font-weight: 800;
+  color: #32624d;
+  background: #eaebd8;
+  width: 36px;
+  height: 36px;
+  border-radius: 12px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.step-item h3 {
+  font-size: 20px;
+  font-weight: 800;
+  margin-bottom: 10px;
+  letter-spacing: -0.4px;
+}
+
+.step-item p {
+  color: var(--text-muted);
+  font-size: 15px;
+  line-height: 1.6;
+}
+
+/* --- GRID PILAR ATURAN --- */
+.showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.showcase-card {
+  background: var(--bg-card-light);
+  border-radius: var(--radius-custom);
+  padding: 32px 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 290px;
+  transition: transform 0.22s ease;
+}
+
+.showcase-card:hover {
+  transform: translateY(-4px);
+}
+
+.showcase-card.dark {
+  background: var(--bg-card-dark);
+  color: #fff;
+}
+
+.showcase-card.dark p {
+  color: #c5dec8;
+}
+
+.showcase-card.yellow {
+  background: var(--accent-yellow);
+  color: var(--text-dark);
+}
+
+.showcase-card.yellow p {
+  color: #3d351b;
+}
+
+.card-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 28px;
+}
+
+.showcase-card.dark .card-icon {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.showcase-card h3 {
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1.25;
+  margin-bottom: 10px;
+  letter-spacing: -0.5px;
+}
+
+.showcase-card p {
+  color: var(--text-muted);
+  font-size: 14.5px;
+  line-height: 1.6;
+}
+
+/* --- DOKUMEN LEGAL & PANDUAN --- */
+.legal-container {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.legal-header {
+  margin-bottom: 28px;
+}
+
+.legal-header h1 {
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -1.5px;
+  margin-bottom: 10px;
+  line-height: 1.15;
+}
+
+.legal-header p {
+  color: var(--text-muted);
+  font-size: 15.5px;
+}
+
+.toc-box {
+  background: #eaebd8;
+  padding: 20px;
+  border-radius: 20px;
+  margin-bottom: 32px;
+}
+
+.toc-title {
+  font-size: 13px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+  display: block;
+}
+
+.pill {
+  display: inline-block;
+  background: #f4f3e8;
+  padding: 8px 16px;
+  border-radius: 99px;
+  margin: 4px;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-weight: 600;
+  font-size: 13px;
+  transition: all 0.2s ease;
+}
+
+.pill:hover {
+  background: var(--bg-dark-green);
+  color: #fff;
+}
+
+.legal-card {
+  background: #fff;
+  border: 1px solid #e2e1d0;
+  padding: 28px 30px;
+  border-radius: 22px;
+  margin-bottom: 18px;
+  scroll-margin-top: 100px;
+}
+
+.legal-card h2 {
+  font-size: 19px;
+  margin-bottom: 10px;
+  color: var(--bg-dark-green);
+  font-weight: 800;
+  letter-spacing: -0.3px;
+}
+
+.legal-card p {
+  color: #2e3831;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+/* --- FOOTER --- */
+footer {
+  border-top: 1px solid var(--border-subtle);
+  padding: 56px 40px 44px 40px;
+  margin-top: 72px;
+  max-width: 1120px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.footer-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 36px;
+  gap: 24px;
+}
+
+.footer-brand p {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-top: 10px;
+  max-width: 320px;
+}
+
+.footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.footer-links a {
+  color: var(--text-dark);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  transition: color 0.2s;
+}
+
+.footer-links a:hover {
+  color: var(--bg-dark-green);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--text-muted);
+  font-size: 13px;
+  padding-top: 24px;
+  border-top: 1px solid #e6e5d6;
+}
+
+/* --- RESPONSIVE --- */
+@media (max-width: 880px) {
+  .hero-container,
+  .steps-grid,
+  .showcase-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .hero-text h1 {
+    font-size: 40px;
+    letter-spacing: -1.5px;
+  }
+
+  .green-banner {
+    padding: 56px 24px;
+  }
+
+  .green-banner h2 {
+    font-size: 32px;
+  }
+
+  header {
+    padding: 16px 20px;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  header nav {
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+
+  footer {
+    padding: 44px 24px 36px 24px;
+  }
+
+  .footer-top,
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+}
+</style>
 </head>
 <body>
 
-    <!-- Header / Navbar Mobile -->
-    <header>
-        <div class="navbar">
-            <div class="logo-area" onclick="switchTab('ketentuan-layanan')">
-                <span>🎵 Mokibox</span>
-            </div>
-            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰ Menu</button>
-        </div>
-        <!-- Menu Dropdown Mobile -->
-        <div id="mobileDropdown" class="mobile-dropdown">
-            <a onclick="switchTab('page-beranda'); toggleMobileMenu();">Beranda</a>
-            <a onclick="switchTab('page-tentang'); toggleMobileMenu();">Tentang</a>
-            <a onclick="switchTab('page-newsroom'); toggleMobileMenu();">Newsroom</a>
-            <a onclick="switchTab('page-bantuan-kontak'); toggleMobileMenu();">Pusat Bantuan & Kontak</a>
-            <a onclick="switchTab('page-keamanan'); toggleMobileMenu();">Keamanan</a>
-        </div>
-    </header>
+<header>
+  <a href="#beranda" class="logo-container" data-route="beranda">
+    <div class="logo-icon">📦</div>
+    <span>mukibox.rules</span>
+  </a>
+  <nav>
+    <a href="#beranda" data-route="beranda" class="nav-item active-link">Beranda</a>
+    <a href="#pilar" data-scroll="pilar" class="nav-item">Pilar Keamanan</a>
+    <a href="#terms" data-route="terms" class="nav-item">Panduan Komunitas</a>
+    <a href="#privacy" data-route="privacy" class="btn-nav nav-item">Kebijakan Privasi</a>
+  </nav>
+</header>
 
-    <!-- Date Banner -->
-    <div class="date-banner">
-        <div class="date-badge">
-            <span>🕒</span> Terakhir diperbarui: 18 September 2026
-        </div>
+<!-- ==================== HALAMAN BERANDA ==================== -->
+<main id="beranda" class="page active">
+  <!-- HERO SECTION -->
+  <section class="hero-container">
+    <div class="hero-text">
+      <span class="hero-tagline">🛡️ KEAMANAN • KREATIVITAS • KOMUNITAS</span>
+      <h1>Berkarya bebas.<br><span class="highlight">Tetap aman.</span></h1>
+      <p>Panduan Komunitas Mokibox dirancang untuk menjaga ruang kreatif tetap positif, autentik, dan saling menghormati bagi ratusan juta kreator di seluruh dunia.</p>
+      <div class="hero-buttons">
+        <a href="#terms" data-route="terms" class="btn-dark">Baca Panduan Lengkap <span>→</span></a>
+        <a href="#penegakan" class="btn-link">Cara penegakan aturan</a>
+      </div>
     </div>
 
-    <!-- Main Layout -->
-    <main class="main-container">
+    <div class="hero-graphic">
+      <div class="floating-sticker-yellow" title="Klik untuk simulasi cek konten" onclick="sendSticker('Video lolos pedoman! ✅')">aman & positif ✨</div>
+      <div class="floating-sticker-star" aria-hidden="true"></div>
 
-        <!-- Navigasi Cepat / Daftar Isi Berbasis Dropdown agar pas di HP -->
-        <aside class="sidebar">
-            <h3>Navigasi Cepat Ketentuan</h3>
-            <select onchange="switchTab(this.value)">
-                <option value="ketentuan-layanan">1. Ketentuan Layanan</option>
-                <option value="pemberi-layanan">2. Pemberi Layanan</option>
-                <option value="kelayakan-usia">3. Kelayakan Usia & Akun</option>
-                <option value="akses-layanan">4. Akses & Penggunaan Layanan</option>
-                <option value="konten-pengguna">5. Konten Pengguna & Hak Cipta</option>
-                <option value="aturan-komunitas">6. Panduan & Aturan Komunitas</option>
-                <option value="penangguhan">7. Penangguhan & Penghentian Akun</option>
-                <option value="tanggung-jawab">8. Batasan Tanggung Jawab</option>
-                <option value="ganti-rugi">9. Ganti Rugi</option>
-                <option value="hukum-yang-berlaku">10. Hukum yang Berlaku</option>
-                <option value="perubahan">11. Perubahan Ketentuan</option>
-            </select>
-        </aside>
-
-        <!-- Content Area -->
-        <section class="content">
-            <div class="alert-box">
-                Selamat datang di Mokibox! Gunakan menu di atas untuk menjelajahi informasi dan ketentuan layanan kami.
+      <div class="mockup-phone">
+        <div class="phone-notch"></div>
+        <div class="phone-screen">
+          <div class="chat-header">
+            <div class="chat-avatar">🛡️</div>
+            <div class="chat-user-info">
+              <div class="chat-user-name">Pusat Keamanan Mokibox</div>
+              <div class="chat-user-status">● Moderasi aktif 24/7</div>
             </div>
+          </div>
 
-            <!-- Konten Menu: Beranda -->
-            <div id="page-beranda" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">🏠</div>
-                    <h2>Beranda Mokibox</h2>
-                </div>
-                <p>Selamat datang di halaman utama portal informasi resmi Mokibox. Platform kami dirancang untuk menginspirasi kreativitas dan membawa kegembiraan melalui video pendek yang kreatif, autentik, dan menghibur.</p>
-            </div>
+          <div class="chat-messages" id="chat-feed">
+            <div class="bubble them">Konten orisinal & positifmu siap masuk For You Page! 🎬</div>
+            <div class="bubble me">Siap! Sudah cantumkan label AI & kredit musik.</div>
+            <div class="bubble sticker-msg">✅✨</div>
+          </div>
 
-            <!-- Konten Menu: Tentang -->
-            <div id="page-tentang" class="tab-content active">
-                <div class="section-title">
-                    <div class="section-number">ℹ️</div>
-                    <h2>Tentang Kami</h2>
-                </div>
-                <p>Mokibox adalah destinasi terdepan untuk video seluler berdurasi pendek. Misi kami adalah menginspirasi kreativitas dan membawa kegembiraan.</p>
-                <p>Kami memiliki kantor utama di <strong>PT SOFHTWHARE TECHNOLOGY CAPITAL</strong> yang berlokasi di Sidomulyo, Sumbergedong, Trenggalek, Jawa Timur.</p>
-            </div>
+          <div class="chat-tray" aria-label="Pilih status keamanan">
+            <button type="button" class="tray-btn" onclick="sendSticker('🛡️')" title="Keamanan Akun">🛡️</button>
+            <button type="button" class="tray-btn" onclick="sendSticker('🎬')" title="Konten Orisinal">🎬</button>
+            <button type="button" class="tray-btn" onclick="sendSticker('🤝')" title="Saling Menghormati">🤝</button>
+            <button type="button" class="tray-btn" onclick="sendSticker('✅')" title="Sesuai Aturan">✅</button>
+          </div>
+        </div>
+      </div>
 
-            <!-- Konten Menu: Newsroom -->
-            <div id="page-newsroom" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">📰</div>
-                    <h2>Newsroom Mokibox</h2>
-                </div>
-                <p>Temukan berita terbaru, pengumuman resmi, pembaruan fitur produk, serta berbagai cerita inspiratif langsung dari pusat berita global Mokibox.</p>
-            </div>
+      <div class="floating-sticker-cat" title="Klik untuk reaksi positif" onclick="sendSticker('🛡️')">🛡️</div>
+    </div>
+  </section>
 
-            <!-- Konten Menu: Pusat Bantuan & Kontak -->
-            <div id="page-bantuan-kontak" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">🛟</div>
-                    <h2>Pusat Bantuan & Kontak</h2>
-                </div>
-                <p>Butuh bantuan seputar pengaturan akun, pemulihan kata sandi, atau laporan masalah teknis? Silakan kirimkan pesan langsung melalui formulir di bawah ini:</p>
+  <!-- GREEN BANNER -->
+  <section id="banner-aturan" class="green-banner">
+    <span class="tag">KOMUNITAS GLOBAL YANG INKLUSIF</span>
+    <h2>Aturan yang jelas agar semua orang nyaman berkreasi.</h2>
+    <a href="#terms" data-route="terms" class="btn-white">Pelajari 11 Pasal Panduan <span>📜</span></a>
+    <div class="sub-info">Berlaku untuk seluruh video, komentar, LIVE, dan pesan langsung</div>
+  </section>
 
-                <div style="background: #ffffff; border: 1px solid #e3e3e4; padding: 16px; border-radius: 8px;">
-                    <h3 style="margin-bottom: 12px; font-size: 1rem; color: #161823;">Kirim Pesan Langsung ke CS</h3>
-                    <form onsubmit="kirimPesanGmail(event)">
-                        <div style="margin-bottom: 12px;">
-                            <label style="display: block; margin-bottom: 5px; font-size: 0.85rem; font-weight: 600;">Pesan:</label>
-                            <textarea id="user-message" required rows="4" placeholder="Tuliskan kendala Anda di sini..." style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 6px; font-size: 0.9rem;"></textarea>
-                        </div>
-                        <button type="submit" style="width: 100%; background-color: #fe2c55; color: white; border: none; padding: 12px; border-radius: 6px; font-weight: 600; cursor: pointer; font-size: 0.9rem;">Kirim Pesan</button>
-                    </form>
-                </div>
-            </div>
+  <!-- SEKSI 3 LANGKAH PENEGAKAN -->
+  <section id="penegakan">
+    <div class="section-header-wrap">
+      <span class="section-eyebrow">SISTEM PENEGAKAN ATURAN</span>
+      <h2 class="section-title">Bagaimana Mukibox menegakkan panduan komunitas.</h2>
+    </div>
 
-            <!-- Konten Menu: Keamanan -->
-            <div id="page-keamanan" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">🛡️</div>
-                    <h2>Pusat Keamanan</h2>
-                </div>
-                <p>Keamanan komunitas adalah prioritas utama kami. Pelajari berbagai alat kontrol orang tua, panduan privasi digital, serta komitmen kami dalam menjaga lingkungan platform.</p>
-            </div>
+    <div class="steps-grid">
+      <div class="step-item">
+        <span class="num">01</span>
+        <h3>Deteksi Otomatis & Laporan</h3>
+        <p>Teknologi moderasi proaktif dan laporan pengguna mengidentifikasi potensi pelanggaran sebelum menyebar luas.</p>
+      </div>
+      <div class="step-item">
+        <span class="num">02</span>
+        <h3>Peninjauan & Tindakan Konten</h3>
+        <p>Konten yang melanggar dapat dihapus, dibatasi usianya, atau dinyatakan tidak memenuhi syarat rekomendasi For You Page.</p>
+      </div>
+      <div class="step-item">
+        <span class="num">03</span>
+        <h3>Peringatan Akun & Banding</h3>
+        <p>Akun pelanggar mendapat teguran bertahap hingga pemblokiran permanen, disertai hak mengajukan banding secara transparan.</p>
+      </div>
+    </div>
+  </section>
 
-            <!-- Tab 1: Ketentuan Layanan -->
-            <div id="ketentuan-layanan" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">1</div>
-                    <h2>Ketentuan Layanan</h2>
-                </div>
-                <p>Ketentuan Layanan ini merupakan perjanjian mengikat secara hukum antara Anda ("Pengguna" atau "Anda") dengan pihak Mokibox mengenai akses dan penggunaan Anda terhadap layanan kami.</p>
-                <p>Dengan membuat akun atau menggunakan aplikasi Mokibox, Anda menyatakan setuju untuk terikat oleh seluruh syarat dan ketentuan yang tercantum dalam dokumen ini.</p>
-            </div>
+  <!-- GRID PILAR KEAMANAN -->
+  <section id="pilar">
+    <div class="section-header-wrap">
+      <span class="section-eyebrow">PILAR UTAMA ATURAN</span>
+      <h2 class="section-title">Prinsip dasar di balik setiap kebijakan Mukibox.</h2>
+    </div>
 
-            <!-- Tab 2: Pemberi Layanan -->
-            <div id="pemberi-layanan" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">2</div>
-                    <h2>Pemberi Layanan</h2>
-                </div>
-                <p>Entitas hukum yang menyediakan layanan kepada Anda adalah:</p>
-                <p><strong>PT SOFHTWHARE TECHNOLOGY CAPITAL / MOKIBOX PTE. LTD.</strong><br>
-                Sidomulyo, Sumbergedong, Trenggalek, Jawa Timur.<br>
-                Email Dukungan Hukum: legal@mokibox.com</p>
-            </div>
+    <div class="showcase-grid">
+      <div class="showcase-card">
+        <div class="card-icon">🧒</div>
+        <div>
+          <h3>Keamanan Remaja & Anak</h3>
+          <p>Perlindungan ketat bagi pengguna di bawah usia 18 tahun, termasuk pembatasan fitur LIVE, pesan langsung, dan privasi akun bawaan.</p>
+        </div>
+      </div>
 
-            <!-- Tab 3: Kelayakan Usia & Akun -->
-            <div id="kelayakan-usia" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">3</div>
-                    <h2>Kelayakan Usia & Akun</h2>
-                </div>
-                <p>Anda harus berusia minimal 13 tahun untuk membuat akun dan menggunakan layanan Mokibox.</p>
-                <p>Jika Anda berusia di bawah 18 tahun, Anda menyatakan telah mendapatkan izin dari orang tua atau wali yang sah.</p>
-            </div>
+      <div class="showcase-card dark">
+        <div class="card-icon">🤝</div>
+        <div>
+          <h3>Integritas & Keaslian</h3>
+          <p>Melarang manipulasi interaksi, akun palsu, penipuan finansial, serta mewajibkan pelabelan pada konten realistis hasil AI.</p>
+        </div>
+      </div>
 
-            <!-- Tab 4: Akses & Penggunaan Layanan -->
-            <div id="akses-layanan" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">4</div>
-                    <h2>Akses & Penggunaan Layanan</h2>
-                </div>
-                <p>Mokibox memberikan lisensi pribadi dan non-eksklusif untuk menggunakan layanan semata-mata untuk hiburan pribadi dan non-komersial.</p>
-            </div>
+      <div class="showcase-card yellow">
+        <div class="card-icon">©️</div>
+        <div>
+          <h3>Hak Cipta & Karya Orisinal</h3>
+          <p>Menghormati kekayaan intelektual kreator dan musisi dengan melarang unggah ulang tanpa izin serta menyediakan pustaka audio resmi.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
 
-            <!-- Tab 5: Konten Pengguna & Hak Cipta -->
-            <div id="konten-pengguna" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">5</div>
-                    <h2>Konten Pengguna & Hak Cipta</h2>
-                </div>
-                <p>Anda tetap memegang hak kepemilikan atas konten yang Anda buat dan unggah ke dalam platform Mokibox.</p>
-            </div>
+<!-- ==================== HALAMAN PANDUAN KOMUNITAS MUKIBOX ==================== -->
+<section id="terms" class="page">
+  <div class="legal-container">
+    <a class="back" href="#beranda" data-route="beranda">← Kembali ke Beranda</a>
+    <div class="legal-header">
+      <h1>Panduan Komunitas & Aturan Mukibox</h1>
+      <p>Ringkasan aturan resmi yang wajib dipatuhi seluruh kreator dan pengguna di platform Mukibox. Pembaruan kebijakan: 2026</p>
+    </div>
 
-            <!-- Tab 6: Panduan & Aturan Komunitas -->
-            <div id="aturan-komunitas" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">6</div>
-                    <h2>Panduan & Aturan Komunitas</h2>
-                </div>
-                <p>Anda wajib mematuhi Panduan Komunitas Mokibox yang melarang kekerasan, ujaran kebencian, perundungan, serta penipuan.</p>
-            </div>
+    <div class="toc-box">
+      <span class="toc-title">Daftar Aturan Utama</span>
+      <div>
+        <a class="pill" href="#p1">1. Ketentuan Umum & Usia</a>
+        <a class="pill" href="#p2">2. Keamanan Remaja</a>
+        <a class="pill" href="#p3">3. Perilaku Berbahaya & Tantangan</a>
+        <a class="pill" href="#p4">4. Perundungan & Pelecehan</a>
+        <a class="pill" href="#p5">5. Ujaran Kebencian</a>
+        <a class="pill" href="#p6">6. Konten Dewasa & Sensitif</a>
+        <a class="pill" href="#p7">7. Integritas, Spam & Label AI</a>
+        <a class="pill" href="#p8">8. Barang Diatur & Transaksi Ilegal</a>
+        <a class="pill" href="#p9">9. Hak Cipta & Kekayaan Intelektual</a>
+        <a class="pill" href="#p10">10. Aturan Fitur Mukibox LIVE</a>
+        <a class="pill" href="#p11">11. Sanksi Akun & Hak Banding</a>
+      </div>
+    </div>
 
-            <!-- Tab 7: Penangguhan & Penghentian Akun -->
-            <div id="penangguhan" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">7</div>
-                    <h2>Penangguhan & Penghentian Akun</h2>
-                </div>
-                <p>Kami berhak menangguhkan atau menghentikan akses Anda jika melanggar ketentuan layanan atau Panduan Komunitas kami.</p>
-            </div>
+    <div class="legal-card" id="p1">
+      <h2>01. Ketentuan Umum & Kelayakan Usia</h2>
+      <p>Pengguna harus berusia minimal 13 tahun untuk membuat akun Mukibox. Dengan mengakses platform, pengguna setuju mematuhi Ketentuan Layanan dan Panduan Komunitas di setiap fitur unggahan, komentar, maupun pesan.</p>
+    </div>
 
-            <!-- Tab 8: Batasan Tanggung Jawab -->
-            <div id="tanggung-jawab" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">8</div>
-                    <h2>Batasan Tanggung Jawab</h2>
-                </div>
-                <p>Layanan disediakan "sebagaimana adanya". Kami tidak bertanggung jawab atas kerugian tidak langsung akibat gangguan teknis.</p>
-            </div>
+    <div class="legal-card" id="p2">
+      <h2>02. Keamanan Remaja (Di Bawah 18 Tahun)</h2>
+      <p>Mukibox menerapkan perlindungan berlapis bagi pengguna berusia 13–17 tahun: akun usia 13–15 tahun bersifat privat secara bawaan, fitur pesan langsung dibatasi, serta konten dewasa tidak direkomendasikan di umpan remaja.</p>
+    </div>
 
-            <!-- Tab 9: Ganti Rugi -->
-            <div id="ganti-rugi" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">9</div>
-                    <h2>Ganti Rugi</h2>
-                </div>
-                <p>Anda setuju membebaskan Mokibox dan afiliasinya dari klaim atau biaya yang timbul akibat pelanggaran ketentuan.</p>
-            </div>
+    <div class="legal-card" id="p3">
+      <h2>03. Perilaku Berbahaya & Tantangan Berisiko</h2>
+      <p>Dilarang keras mengunggah, mempromosikan, atau meniru tantangan (*challenges*) ekstrem, aksi berbahaya tanpa pengamanan profesional, serta tindakan yang membahayakan keselamatan fisik diri sendiri maupun orang lain.</p>
+    </div>
 
-            <!-- Tab 10: Hukum yang Berlaku -->
-            <div id="hukum-yang-berlaku" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">10</div>
-                    <h2>Hukum yang Berlaku</h2>
-                </div>
-                <p>Ketentuan ini diatur berdasarkan hukum yang berlaku di wilayah operasional setempat.</p>
-            </div>
+    <div class="legal-card" id="p4">
+      <h2>04. Larangan Perundungan & Pelecehan</h2>
+      <p>Kami tidak menoleransi perundungan siber (*cyberbullying*), penghinaan terkoordinasi, pengungkapan informasi pribadi tanpa izin (*doxxing*), maupun pelecehan dalam bentuk apa pun di video atau kolom komentar.</p>
+    </div>
 
-            <!-- Tab 11: Perubahan Ketentuan -->
-            <div id="perubahan" class="tab-content">
-                <div class="section-title">
-                    <div class="section-number">11</div>
-                    <h2>Perubahan Ketentuan</h2>
-                </div>
-                <p>Kami dapat memperbarui syarat dan ketentuan ini sewaktu-waktu dan akan diumumkan melalui aplikasi.</p>
-            </div>
+    <div class="legal-card" id="p5">
+      <h2>05. Ujaran Kebencian & Diskriminasi</h2>
+      <p>Dilarang mengunggah konten yang menyerang, merendahkan, atau menghasut kebencian terhadap individu maupun kelompok berdasarkan ras, etnis, agama, gender, disabilitas, atau latar belakang lainnya.</p>
+    </div>
 
-        </section>
+    <div class="legal-card" id="p6">
+      <h2>06. Konten Dewasa, Kekerasan & Visual Grafis</h2>
+      <p>Mukibox melarang konten pornografi, ketelanjangan, eksploitasi dalam bentuk apa pun, serta rekaman kekerasan ekstrem atau visual grafis yang mengejutkan demi menjaga kenyamanan seluruh lapisan pengguna.</p>
+    </div>
 
-    </main>
+    <div class="legal-card" id="p7">
+      <h2>07. Integritas Platform, Spam & Pelabelan AI</h2>
+      <p>Dilarang memanipulasi jumlah tayangan, pengikut, atau suka secara tidak wajar, menyebarkan misinformasi berbahaya, serta memublikasikan konten realistis buatan AI (AIGC) tanpa menyertakan label pengungkapan resmi.</p>
+    </div>
 
-    <!-- JavaScript untuk HP -->
-    <script>
-        function toggleMobileMenu() {
-            const dropdown = document.getElementById('mobileDropdown');
-            dropdown.classList.toggle('show');
-        }
+    <div class="legal-card" id="p8">
+      <h2>08. Barang yang Diatur & Transaksi Terlarang</h2>
+      <p>Pengguna dilarang memperjualbelikan, mempromosikan, atau memfasilitasi transaksi senjata api, obat-obatan terlarang, zat berbahaya, perjudian ilegal, maupun produk palsu di Mukibox maupun Mukibox Shop.</p>
+    </div>
 
-        function switchTab(targetId) {
-            // Sembunyikan semua konten tab
-            const contents = document.querySelectorAll('.tab-content');
-            contents.forEach(content => {
-                content.classList.remove('active');
-            });
+    <div class="legal-card" id="p9">
+      <h2>09. Hak Cipta & Kekayaan Intelektual</h2>
+      <p>Hanya unggah konten yang kamu buat sendiri atau memiliki izin sah untuk digunakan. Mengunggah ulang video orang lain tanpa kredit/izin atau menggunakan musik di luar lisensi resmi dapat mengakibatkan penghapusan konten.</p>
+    </div>
 
-            // Tampilkan konten target
-            const targetContent = document.getElementById(targetId);
-            if (targetContent) {
-                targetContent.classList.add('active');
-            }
+    <div class="legal-card" id="p10">
+      <h2>10. Aturan Khusus Mukibox LIVE</h2>
+      <p>Penyelenggara siaran LIVE wajib berusia minimal 18 tahun, menjaga interaksi tetap sopan, dilarang melakukan penipuan hadiah (*gift scam*), dan bertanggung jawab atas moderasi komentar selama siaran berlangsung.</p>
+    </div>
 
-            // Gulir ke atas secara halus
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        }
+    <div class="legal-card" id="p11">
+      <h2>11. Sanksi Pelanggaran & Hak Mengajukan Banding</h2>
+      <p>Pelanggaran aturan dikenai sistem poin teguran (*strike*) per kategori fitur. Pelanggaran berulang atau sangat berat berujung pemblokiran akun permanen. Pengguna selalu berhak mengajukan banding jika merasa keputusan moderasi keliru.</p>
+    </div>
+  </div>
+</section>
 
-        function kirimPesanGmail(event) {
-            event.preventDefault();
-            const isiPesan = document.getElementById('user-message').value;
-            const tujuanEmail = "csmokibox@gmail.com";
-            const subjek = encodeURIComponent("Pesan Bantuan dari Pengguna Mokibox");
-            const bodyPesan = encodeURIComponent(`Pesan:\n${isiPesan}`);
-            window.location.href = `mailto:${tujuanEmail}?subject=${subjek}&body=${bodyPesan}`;
-        }
-    </script>
+<!-- ==================== HALAMAN PRIVACY POLICY MUKIBOX ==================== -->
+<section id="privacy" class="page">
+  <div class="legal-container">
+    <a class="back" href="#beranda" data-route="beranda">← Kembali ke Beranda</a>
+    <div class="legal-header">
+      <h1>Kebijakan Privasi & Kontrol Pengguna</h1>
+      <p>Bagaimana informasi akun dikelola, dilindungi, dan dapat dikontrol sepenuhnya oleh pengguna Mukibox. Pembaruan kebijakan: 2026</p>
+    </div>
 
+    <div class="toc-box">
+      <span class="toc-title">Ringkasan Privasi</span>
+      <div>
+        <a class="pill" href="#pr1">1. Informasi yang Dikelola</a>
+        <a class="pill" href="#pr2">2. Personalisasi For You Page</a>
+        <a class="pill" href="#pr3">3. Pengaturan Privasi Akun</a>
+        <a class="pill" href="#pr4">4. Keamanan & Hak Pengguna</a>
+      </div>
+    </div>
+
+    <div class="legal-card" id="pr1">
+      <h2>01. Informasi yang Dikelola</h2>
+      <p>Informasi mencakup data pendaftaran akun (tanggal lahir, nama pengguna, email/nomor ponsel), konten video dan audio yang kamu buat, serta informasi perangkat teknis untuk menjaga keamanan dan kelancaran pemutaran video.</p>
+    </div>
+
+    <div class="legal-card" id="pr2">
+      <h2>02. Cara Kerja Rekomendasi For You Page</h2>
+      <p>Sistem rekomendasi menganalisis interaksi seperti video yang disukai, dibagikan, durasi tontonan, dan preferensi bahasa untuk menyusun umpan yang relevan—dan kamu dapat menyegarkan (*refresh*) algoritma umpanmu kapan saja.</p>
+    </div>
+
+    <div class="legal-card" id="pr3">
+      <h2>03. Kontrol Visibilitas & Interaksi</h2>
+      <p>Pengguna dapat mengubah akun menjadi privat, mengatur siapa yang bisa mengomentari video, menonaktifkan fitur Duet atau Stitch pada video tertentu, serta menyaring kata kunci komentar secara otomatis.</p>
+    </div>
+
+    <div class="legal-card" id="pr4">
+      <h2>04. Keamanan Akun & Unduh Data</h2>
+      <p>Mukibox menyediakan verifikasi dua langkah (2FA), pengelolaan perangkat login aktif, serta fitur pengunduhan salinan data pribadi dan penghapusan akun secara mandiri melalui menu Pengaturan dan Privasi.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-top">
+    <div class="footer-brand">
+      <a href="#beranda" class="logo-container" data-route="beranda">
+        <div class="logo-icon">📦</div>
+        <span>mukibox.rules</span>
+      </a>
+      <p>Berkarya bebas. Tetap aman. Panduan aturan komunitas dan keamanan pengguna Mukibox.</p>
+    </div>
+
+    <div class="footer-links">
+      <a href="#beranda" data-route="beranda">Beranda</a>
+      <a href="#pilar" data-scroll="pilar">Pilar Keamanan</a>
+      <a href="#terms" data-route="terms">Panduan Komunitas</a>
+      <a href="#privacy" data-route="privacy">Kebijakan Privasi</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 Panduan Komunitas & Aturan Mukibox. Informasi edukasi aturan platform.</span>
+    <span>Pusat Keamanan & Transparansi</span>
+  </div>
+</footer>
+
+<script>
+  const pages = ['beranda', 'terms', 'privacy'];
+
+  function showPage(routeId, scrollTargetId = null) {
+    pages.forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle('active', id === routeId);
+    });
+
+    document.querySelectorAll('.nav-item').forEach(link => {
+      const linkRoute = link.getAttribute('data-route');
+      link.classList.toggle('active-link', linkRoute === routeId);
+    });
+
+    if (scrollTargetId) {
+      requestAnimationFrame(() => {
+        const target = document.getElementById(scrollTargetId);
+        if (target) target.scrollIntoView({ behavior: 'smooth' });
+      });
+    } else {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  }
+
+  document.querySelectorAll('[data-route]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const route = el.getAttribute('data-route');
+      history.pushState(null, '', '#' + route);
+      showPage(route);
+    });
+  });
+
+  document.querySelectorAll('[data-scroll]').forEach(el => {
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      const targetId = el.getAttribute('data-scroll');
+      history.pushState(null, '', '#' + targetId);
+      showPage('beranda', targetId);
+    });
+  });
+
+  window.addEventListener('hashchange', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (pages.includes(hash)) {
+      showPage(hash);
+    } else if (hash === 'pilar' || hash === 'penegakan' || hash === 'banner-aturan') {
+      showPage('beranda', hash);
+    }
+  });
+
+  window.addEventListener('DOMContentLoaded', () => {
+    const hash = window.location.hash.replace('#', '');
+    if (pages.includes(hash)) {
+      showPage(hash);
+    } else if (hash === 'pilar' || hash === 'penegakan' || hash === 'banner-aturan') {
+      showPage('beranda', hash);
+    }
+  });
+
+  function sendSticker(stickerText) {
+    const feed = document.getElementById('chat-feed');
+    if (!feed) return;
+    const msg = document.createElement('div');
+    msg.className = stickerText.length <= 4 ? 'bubble sticker-msg' : 'bubble me';
+    msg.textContent = stickerText;
+    feed.appendChild(msg);
+    if (feed.children.length > 5) {
+      feed.removeChild(feed.firstElementChild);
+    }
+  }
+</script>
 </body>
 </html>
